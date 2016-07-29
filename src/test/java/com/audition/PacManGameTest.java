@@ -22,4 +22,9 @@ public class PacManGameTest {
     public void whenTheGameStartsAPacManIsDisplayed() {
         assertEquals(game.field[1][1], "V");
     }
+
+    @Test
+    public void pacManHasADirection() {
+        assertEquals(game.pacman.direction, "V");
+    }
 }
