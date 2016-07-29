@@ -60,7 +60,7 @@ public class PacManGame {
     public void tick() {
         /*
         I wanted to put this logic in pacMan but then it would need access to field.
-        Also putting this in its own method makes tick just call move().
+        Also putting this in its own method makes tick just a one-line call.
          */
         switch (pacMan.direction) {
             case "V":
