@@ -52,4 +52,30 @@ public class PacManGameTest {
         assertEquals(game.pacMan.direction, "<");
     }
 
+    @Test
+    public void pacManMovesUp() {
+        game.pacMan.up();
+        game.tick();
+        assertEquals(game.field[1][0], "V");
+    }
+
+    @Test
+    public void pacManMovesDown() {
+        game.pacMan.down();
+        game.tick();
+        assertEquals(game.field[1][2], "^");
+    }
+
+    @Test
+    public void pacManMovesLeft() {
+        game.pacMan.left();
+        game.tick();
+        assertEquals(game.field[0][1], ">");
+    }
+    @Test
+    public void pacManMovesRight() {
+        game.pacMan.right();
+        game.tick();
+        assertEquals(game.field[2][1], "<");
+    }
 }
