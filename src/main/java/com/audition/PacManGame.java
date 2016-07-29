@@ -4,10 +4,12 @@ package com.audition;
 public class PacManGame {
     String[][] field;
     PacMan pacMan;
+    int score;
 
     PacManGame() {
         field = initializeField();
         pacMan = new PacMan(1,1);
+        score = 0;
     }
 
     private String[][] initializeField() {
@@ -28,6 +30,8 @@ public class PacManGame {
 
 
     private void move (int xChange, int yChange) {
+        field[pacMan.x][pacMan.y] = " ";
+
         pacMan.x += xChange;
         if (pacMan.x < 0) {
             pacMan.x = 0;
@@ -46,7 +50,11 @@ public class PacManGame {
     }
 
     private void eat(int x, int y) {
-        field[x][y] = " ";
+        if ((x >= 0) && (x <= 2) &&
+                (y >= 0) && (y <= 2) &&
+                (field[x][y].equals("."))) {
+            score++;
+        }
     }
 
     public void tick() {
@@ -56,20 +64,20 @@ public class PacManGame {
          */
         switch (pacMan.direction) {
             case "V":
-                move(0,-1);
                 eat(pacMan.x,pacMan.y + 1);
+                move(0,-1);
                 break;
             case "^":
-                move(0,1);
                 eat(pacMan.x,pacMan.y - 1);
+                move(0,1);
                 break;
             case ">":
-                move(-1,0);
                 eat(pacMan.x + 1,pacMan.y);
+                move(-1,0);
                 break;
             case "<":
-                move(1,0);
                 eat(pacMan.x - 1,pacMan.y);
+                move(1,0);
                 break;
             default:
                 break;
