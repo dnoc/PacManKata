@@ -150,4 +150,13 @@ public class PacManGameTest {
         game.tick();
         assertEquals(game.field[0][1], " ");
     }
+
+    @Test
+    public void scoreIncreasesWhenPacManEats() {
+        game.pacMan.down();
+        game.tick();
+        game.pacMan.up();
+        game.tick();
+        assertEquals(game.score,1);
+    }
 }
