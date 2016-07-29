@@ -78,4 +78,40 @@ public class PacManGameTest {
         game.tick();
         assertEquals(game.field[2][1], "<");
     }
+
+    @Test
+    public void pacManDoesNotMoveOutOfBoundsUp() {
+        game.pacMan.up();
+        game.tick();
+        game.pacMan.up();
+        game.tick();
+        assertEquals(game.field[1][0], "V");
+    }
+
+    @Test
+    public void pacManDoesNotMoveOutOfBoundsDown() {
+        game.pacMan.down();
+        game.tick();
+        game.pacMan.down();
+        game.tick();
+        assertEquals(game.field[1][2], "^");
+    }
+
+    @Test
+    public void pacManDoesNotMoveOutOfBoundsLeft() {
+        game.pacMan.left();
+        game.tick();
+        game.pacMan.left();
+        game.tick();
+        assertEquals(game.field[0][1], ">");
+    }
+
+    @Test
+    public void pacManDoesNotMoveOutOfBoundsRight() {
+        game.pacMan.right();
+        game.tick();
+        game.pacMan.right();
+        game.tick();
+        assertEquals(game.field[2][1], "<");
+    }
 }
