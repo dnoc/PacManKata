@@ -25,6 +25,6 @@ public class PacManGameTest {
 
     @Test
     public void pacManHasADirection() {
-        assertEquals(game.pacman.direction, "V");
+        assertEquals(game.pacMan.direction, "V");
     }
 }

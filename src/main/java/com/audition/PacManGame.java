@@ -3,9 +3,11 @@ package com.audition;
 
 public class PacManGame {
     String[][] field;
+    PacMan pacMan;
 
     PacManGame() {
         field = initializeField();
+        pacMan = new PacMan(1,1);
     }
 
     private String[][] initializeField() {
@@ -24,3 +26,4 @@ public class PacManGame {
         return field;
     }
 }
+
