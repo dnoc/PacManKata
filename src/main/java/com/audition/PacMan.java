@@ -12,19 +12,11 @@ public class PacMan {
         direction = "V";
     }
 
-    public void up() {
-        direction = "V";
-    }
+    public void up() { direction = "V"; }
 
-    public void down() {
-        direction = "^";
-    }
+    public void down() { direction = "^"; }
 
-    public void left() {
-        direction = ">";
-    }
+    public void left() { direction = ">"; }
 
-    public void right() {
-        direction = "<";
-    }
+    public void right() { direction = "<"; }
 }

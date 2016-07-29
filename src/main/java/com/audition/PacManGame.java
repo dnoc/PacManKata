@@ -1,6 +1,5 @@
 package com.audition;
 
-
 public class PacManGame {
     String[][] field;
     PacMan pacMan;
@@ -27,7 +26,6 @@ public class PacManGame {
         }
         return field;
     }
-
 
     private void move (int xChange, int yChange) {
         field[pacMan.x][pacMan.y] = " ";
