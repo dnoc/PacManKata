@@ -114,4 +114,40 @@ public class PacManGameTest {
         game.tick();
         assertEquals(game.field[2][1], "<");
     }
+
+    @Test
+    public void pacManEatsDownUp() {
+        game.pacMan.down();
+        game.tick();
+        game.pacMan.up();
+        game.tick();
+        assertEquals(game.field[1][2], " ");
+    }
+
+    @Test
+    public void pacManEatsUpDown() {
+        game.pacMan.up();
+        game.tick();
+        game.pacMan.down();
+        game.tick();
+        assertEquals(game.field[1][0], " ");
+    }
+
+    @Test
+    public void pacManEatsRightLeft() {
+        game.pacMan.right();
+        game.tick();
+        game.pacMan.left();
+        game.tick();
+        assertEquals(game.field[2][1], " ");
+    }
+
+    @Test
+    public void pacManEatsLeftRight() {
+        game.pacMan.left();
+        game.tick();
+        game.pacMan.right();
+        game.tick();
+        assertEquals(game.field[0][1], " ");
+    }
 }
