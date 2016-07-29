@@ -45,6 +45,10 @@ public class PacManGame {
         field[pacMan.x][pacMan.y] = pacMan.direction;
     }
 
+    private void eat(int x, int y) {
+        field[x][y] = " ";
+    }
+
     public void tick() {
         /*
         I wanted to put this logic in pacMan but then it would need access to field.
@@ -53,15 +57,19 @@ public class PacManGame {
         switch (pacMan.direction) {
             case "V":
                 move(0,-1);
+                eat(pacMan.x,pacMan.y + 1);
                 break;
             case "^":
                 move(0,1);
+                eat(pacMan.x,pacMan.y - 1);
                 break;
             case ">":
                 move(-1,0);
+                eat(pacMan.x + 1,pacMan.y);
                 break;
             case "<":
                 move(1,0);
+                eat(pacMan.x - 1,pacMan.y);
                 break;
             default:
                 break;
