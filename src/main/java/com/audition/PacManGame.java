@@ -29,7 +29,19 @@ public class PacManGame {
 
     private void move (int xChange, int yChange) {
         pacMan.x += xChange;
+        if (pacMan.x < 0) {
+            pacMan.x = 0;
+        } else if (pacMan.x > 2) {
+            pacMan.x = 2;
+        }
+
         pacMan.y += yChange;
+        if (pacMan.y < 0) {
+            pacMan.y = 0;
+        } else if (pacMan.y > 2) {
+            pacMan.y = 2;
+        }
+
         field[pacMan.x][pacMan.y] = pacMan.direction;
     }
 
