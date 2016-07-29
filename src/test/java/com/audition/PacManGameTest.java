@@ -27,4 +27,29 @@ public class PacManGameTest {
     public void pacManHasADirection() {
         assertEquals(game.pacMan.direction, "V");
     }
+
+    @Test
+    public void pacManCanChangeDirectionUp() {
+        game.pacMan.up();
+        assertEquals(game.pacMan.direction, "V");
+    }
+
+    @Test
+    public void pacManCanChangeDirectionDown() {
+        game.pacMan.down();
+        assertEquals(game.pacMan.direction, "^");
+    }
+
+    @Test
+    public void pacManCanChangeDirectionLeft() {
+        game.pacMan.left();
+        assertEquals(game.pacMan.direction, ">");
+    }
+
+    @Test
+    public void pacManCanChangeDirectionRight() {
+        game.pacMan.right();
+        assertEquals(game.pacMan.direction, "<");
+    }
+
 }
