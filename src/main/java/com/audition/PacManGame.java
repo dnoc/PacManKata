@@ -25,5 +25,35 @@ public class PacManGame {
         }
         return field;
     }
+
+
+    private void move (int xChange, int yChange) {
+        pacMan.x += xChange;
+        pacMan.y += yChange;
+        field[pacMan.x][pacMan.y] = pacMan.direction;
+    }
+
+    public void tick() {
+        /*
+        I wanted to put this logic in pacMan but then it would need access to field.
+        Also putting this in its own method makes tick just call move().
+         */
+        switch (pacMan.direction) {
+            case "V":
+                move(0,-1);
+                break;
+            case "^":
+                move(0,1);
+                break;
+            case ">":
+                move(-1,0);
+                break;
+            case "<":
+                move(1,0);
+                break;
+            default:
+                break;
+        }
+    }
 }
 
